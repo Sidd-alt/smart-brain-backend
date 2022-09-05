@@ -25,6 +25,7 @@ app.use(cors())
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 
+app.get("/", (req, res) => console.log("IT IS WORKING !"))
 app.post("/signin", (req, res) => signIn.handleSignIn(req, res, db, bcrypt))
 app.post("/register", (req, res) =>  register.handleRegister(req, res, db, bcrypt))
 app.get("/profile/:id", (req, res) => getProfile.handleGetProfile(req, res, db))
