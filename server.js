@@ -31,7 +31,7 @@ app.get("/profile/:id", (req, res) => getProfile.handleGetProfile(req, res, db))
 app.post("/imageInput", (req, res) => clarifai.handleClarifaiAPI(req, res))
 app.put("/image", (req, res) => entryCount.handleEntryCount(req, res, db))
 
-app.listen(3003, ()=> {
-   console.log("Server is running on port 3003")
+app.listen(process.env.PORT || 3000, ()=> {
+   console.log(`Server is running on port ${process.env.PORT || 3000}`)
 });
 
